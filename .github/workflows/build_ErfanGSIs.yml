@@ -49,21 +49,24 @@ jobs:
               sudo chmod -R 777 ErfanGSIs
               cd ErfanGSIs
               sudo bash setup.sh
-              sudo sed -i '7c AB=true' url2GSI.sh
-              sudo sed -i '8c Aonly=false' url2GSI.sh
        
        - name: Download Stock Rom & Generate GSI
          run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
        
-       - name: Zip GSI  
+       - name: Zip GSI_AB  
          run: |
               mkdir final
-              zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
+              zip -r final/GSI_AB.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*AB*
        
-       - name: Upload GSI to BitSend
+       - name: Zip GSI_Aonly  
+         run: |
+              mkdir final
+              zip -r final/GSI_Aonly.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*Aonly*
+       
+       - name: Upload GSI to WeTransfer
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer wet final/GSI.zip
-
+              ./transfer wet final/GSI_AB.zip
+              ./transfer wet final/GSI_Aonly.zip
          
             
