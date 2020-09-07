@@ -55,13 +55,13 @@ jobs:
        
        - name: Zip GSI_AB  
          run: |
+              cd /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs
               mkdir final
-              zip -r final/GSI_AB.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*AB*
+              zip -r final/GSI_AB.zip ErfanGSIs/output/*AB*
        
        - name: Zip GSI_Aonly  
          run: |
-              mkdir final
-              zip -r final/GSI_Aonly.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*Aonly*
+              zip -r final/GSI_Aonly.zip ErfanGSIs/output/*Aonly*
        
        - name: Upload GSI to WeTransfer
          run: |
