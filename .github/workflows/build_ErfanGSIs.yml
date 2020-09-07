@@ -63,10 +63,12 @@ jobs:
          run: |
               zip -r final/GSI_Aonly.zip ErfanGSIs/output/*Aonly*
        
-       - name: Upload GSI to WeTransfer
+       - name: Upload GSI_AB to WeTransfer
          run: |
               curl -sL https://git.io/file-transfer | sh
               ./transfer wet final/GSI_AB.zip
-              ./transfer wet final/GSI_Aonly.zip
-         
+    
+       - name: Upload GSI_Aonly to WeTransfer
+         run: |
+              ./transfer wet final/GSI_Aonly.zip  
             
