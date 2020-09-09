@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://download.c.realme.com/osupdate/RMX1901_11_OTA_1120_all_5fcT8erEU2dx.ozip
+  ROM_URL: http://bigota.d.miui.com/V12.0.2.0.QGGCNXM/miui_BEGONIA_V12.0.2.0.QGGCNXM_972f66522c_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
