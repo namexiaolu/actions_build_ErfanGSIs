@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://dl.google.com/dl/android/aosp/blueline-ota-qq3a.200805.001-4e00f93a.zip
+  ROM_URL: https://dl.google.com/dl/android/aosp/blueline-qq3a.200805.001-factory-1ba5d2c2.zip
   ROM_NAME: Pixel
   TZ: Asia/Shanghai
 
